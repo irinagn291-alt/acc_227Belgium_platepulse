@@ -1,0 +1,15 @@
+PlatePulse is a personal food log that tracks daily energy, protein, carbs and fat against targets you set. Search or scan packaged products, assign readings to Dawn Reading, Noon Reading, Dusk Reading or Interval, and review progress on Today Pulse. It is not medical advice.
+
+• Today Pulse shows daily totals, progress bars and slot summaries
+• Search products by name through Open Food Facts and the bundled Pulse Shelf
+• Scan barcodes with the camera or enter a code manually
+• Detail shows per-100 g nutrition and portion totals in grams
+• Assign readings as Eaten today or Plan ahead for up to 14 days
+• Eaten Log lists readings by day with Prev and Next navigation
+• Ahead Plan lists upcoming readings with Eat now to log them today
+• Wish Shelf saves products from Detail for later
+• Daily Goals edits energy, protein, carbs and fat targets
+• Access Mode offers a persisted high-contrast theme, VoiceOver labels and Dynamic Type support
+• Offline-first storage keeps logs, plans, wishes and targets on device
+
+For anyone who wants clear macro readings without typing every field.

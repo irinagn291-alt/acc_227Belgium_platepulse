@@ -1,0 +1,11 @@
+Initial release of PlatePulse.
+
+• Four-page onboarding: Read every pack, Search or scan, Set daily vitals, Your first targets
+• Main pages: Today Pulse, Eaten Log, Ahead Plan, Daily Goals
+• Logging flow: Search, Scan, Detail, Assign
+• Open Food Facts product search and barcode lookup
+• Bundled Pulse Shelf products for offline use
+• Wish Shelf to save products for later
+• 14-day Ahead Plan with Eat now
+• Access Mode with high-contrast theme
+• Contact us page on Goals
