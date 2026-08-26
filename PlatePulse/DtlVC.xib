@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DtlVC" customModule="PlatePulse" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="root" id="ov"/>
+                <outlet property="scroll" destination="sc" id="o0"/>
+                <outlet property="backImg" destination="bi" id="o1"/>
+                <outlet property="thumb" destination="th" id="o2"/>
+                <outlet property="nameLbl" destination="nl" id="o3"/>
+                <outlet property="brandLbl" destination="br" id="o4"/>
+                <outlet property="kcalLbl" destination="k1" id="o5"/>
+                <outlet property="protLbl" destination="p1" id="o6"/>
+                <outlet property="carbLbl" destination="c1" id="o7"/>
+                <outlet property="fatLbl" destination="f1" id="o8"/>
+                <outlet property="gramField" destination="gf" id="o9"/>
+                <outlet property="totKcal" destination="tk" id="o10"/>
+                <outlet property="totProt" destination="tp" id="o11"/>
+                <outlet property="totCarb" destination="tc" id="o12"/>
+                <outlet property="totFat" destination="tf" id="o13"/>
+                <outlet property="asgnBtn" destination="ab" id="o14"/>
+                <outlet property="wishBtn" destination="wb" id="o15"/>
+                <outlet property="emptyBox" destination="eb" id="o16"/>
+                <outlet property="emptyTitle" destination="et" id="o17"/>
+                <outlet property="missLbl" destination="ml" id="o18"/>
+                <outlet property="formBox" destination="fb" id="o19"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="root">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sc">
+                    <subviews>
+                        <view translatesAutoresizingMaskIntoConstraints="NO" id="fb">
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bi">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="bih"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="th">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="72" id="thw"/>
+                                        <constraint firstAttribute="height" constant="72" id="thh"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" text="Name" translatesAutoresizingMaskIntoConstraints="NO" id="nl"/>
+                                <label opaque="NO" text="Brand" translatesAutoresizingMaskIntoConstraints="NO" id="br"/>
+                                <label opaque="NO" text="kcal" translatesAutoresizingMaskIntoConstraints="NO" id="k1"/>
+                                <label opaque="NO" text="prot" translatesAutoresizingMaskIntoConstraints="NO" id="p1"/>
+                                <label opaque="NO" text="carb" translatesAutoresizingMaskIntoConstraints="NO" id="c1"/>
+                                <label opaque="NO" text="fat" translatesAutoresizingMaskIntoConstraints="NO" id="f1"/>
+                                <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="grams" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gf">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="gfh"/>
+                                    </constraints>
+                                </textField>
+                                <label opaque="NO" text="totk" translatesAutoresizingMaskIntoConstraints="NO" id="tk"/>
+                                <label opaque="NO" text="totp" translatesAutoresizingMaskIntoConstraints="NO" id="tp"/>
+                                <label opaque="NO" text="totc" translatesAutoresizingMaskIntoConstraints="NO" id="tc"/>
+                                <label opaque="NO" text="totf" translatesAutoresizingMaskIntoConstraints="NO" id="tf"/>
+                                <label opaque="NO" text="" translatesAutoresizingMaskIntoConstraints="NO" id="ml"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="ab">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="abh"/>
+                                    </constraints>
+                                    <state key="normal" title="Assign"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="wb">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="wbh"/>
+                                    </constraints>
+                                    <state key="normal" title="Wish"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="bi" firstAttribute="top" secondItem="fb" secondAttribute="top" id="u1"/>
+                                <constraint firstItem="bi" firstAttribute="leading" secondItem="fb" secondAttribute="leading" id="u2"/>
+                                <constraint firstItem="bi" firstAttribute="trailing" secondItem="fb" secondAttribute="trailing" id="u3"/>
+                                <constraint firstItem="th" firstAttribute="top" secondItem="bi" secondAttribute="bottom" constant="8" id="u4"/>
+                                <constraint firstItem="th" firstAttribute="leading" secondItem="fb" secondAttribute="leading" constant="16" id="u5"/>
+                                <constraint firstItem="nl" firstAttribute="leading" secondItem="th" secondAttribute="trailing" constant="12" id="u6"/>
+                                <constraint firstItem="nl" firstAttribute="top" secondItem="th" secondAttribute="top" id="u7"/>
+                                <constraint firstItem="fb" firstAttribute="trailing" secondItem="nl" secondAttribute="trailing" constant="16" id="u8"/>
+                                <constraint firstItem="br" firstAttribute="leading" secondItem="nl" secondAttribute="leading" id="u9"/>
+                                <constraint firstItem="br" firstAttribute="top" secondItem="nl" secondAttribute="bottom" constant="4" id="u10"/>
+                                <constraint firstItem="k1" firstAttribute="top" secondItem="th" secondAttribute="bottom" constant="16" id="u11"/>
+                                <constraint firstItem="k1" firstAttribute="leading" secondItem="fb" secondAttribute="leading" constant="16" id="u12"/>
+                                <constraint firstItem="p1" firstAttribute="top" secondItem="k1" secondAttribute="bottom" constant="4" id="u13"/>
+                                <constraint firstItem="p1" firstAttribute="leading" secondItem="k1" secondAttribute="leading" id="u14"/>
+                                <constraint firstItem="c1" firstAttribute="top" secondItem="p1" secondAttribute="bottom" constant="4" id="u15"/>
+                                <constraint firstItem="c1" firstAttribute="leading" secondItem="k1" secondAttribute="leading" id="u16"/>
+                                <constraint firstItem="f1" firstAttribute="top" secondItem="c1" secondAttribute="bottom" constant="4" id="u17"/>
+                                <constraint firstItem="f1" firstAttribute="leading" secondItem="k1" secondAttribute="leading" id="u18"/>
+                                <constraint firstItem="gf" firstAttribute="top" secondItem="f1" secondAttribute="bottom" constant="16" id="u19"/>
+                                <constraint firstItem="gf" firstAttribute="leading" secondItem="fb" secondAttribute="leading" constant="16" id="u20"/>
+                                <constraint firstItem="fb" firstAttribute="trailing" secondItem="gf" secondAttribute="trailing" constant="16" id="u21"/>
+                                <constraint firstItem="tk" firstAttribute="top" secondItem="gf" secondAttribute="bottom" constant="12" id="u22"/>
+                                <constraint firstItem="tk" firstAttribute="leading" secondItem="gf" secondAttribute="leading" id="u23"/>
+                                <constraint firstItem="tp" firstAttribute="top" secondItem="tk" secondAttribute="bottom" constant="4" id="u24"/>
+                                <constraint firstItem="tp" firstAttribute="leading" secondItem="tk" secondAttribute="leading" id="u25"/>
+                                <constraint firstItem="tc" firstAttribute="top" secondItem="tp" secondAttribute="bottom" constant="4" id="u26"/>
+                                <constraint firstItem="tf" firstAttribute="top" secondItem="tc" secondAttribute="bottom" constant="4" id="u27"/>
+                                <constraint firstItem="tc" firstAttribute="leading" secondItem="tk" secondAttribute="leading" id="u28"/>
+                                <constraint firstItem="tf" firstAttribute="leading" secondItem="tk" secondAttribute="leading" id="u29"/>
+                                <constraint firstItem="ml" firstAttribute="top" secondItem="tf" secondAttribute="bottom" constant="8" id="u30"/>
+                                <constraint firstItem="ml" firstAttribute="leading" secondItem="tk" secondAttribute="leading" id="u31"/>
+                                <constraint firstItem="fb" firstAttribute="trailing" secondItem="ml" secondAttribute="trailing" constant="16" id="u32"/>
+                                <constraint firstItem="ab" firstAttribute="top" secondItem="ml" secondAttribute="bottom" constant="16" id="u33"/>
+                                <constraint firstItem="ab" firstAttribute="leading" secondItem="fb" secondAttribute="leading" constant="16" id="u34"/>
+                                <constraint firstItem="fb" firstAttribute="trailing" secondItem="ab" secondAttribute="trailing" constant="16" id="u35"/>
+                                <constraint firstItem="wb" firstAttribute="top" secondItem="ab" secondAttribute="bottom" constant="8" id="u36"/>
+                                <constraint firstItem="wb" firstAttribute="leading" secondItem="ab" secondAttribute="leading" id="u37"/>
+                                <constraint firstItem="wb" firstAttribute="trailing" secondItem="ab" secondAttribute="trailing" id="u38"/>
+                                <constraint firstItem="fb" firstAttribute="bottom" secondItem="wb" secondAttribute="bottom" constant="24" id="u39"/>
+                                <constraint firstItem="fb" firstAttribute="trailing" secondItem="k1" secondAttribute="trailing" constant="16" id="u40"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="fb" firstAttribute="top" secondItem="sc" secondAttribute="top" id="v1"/>
+                        <constraint firstItem="fb" firstAttribute="leading" secondItem="sc" secondAttribute="leading" id="v2"/>
+                        <constraint firstItem="fb" firstAttribute="trailing" secondItem="sc" secondAttribute="trailing" id="v3"/>
+                        <constraint firstItem="fb" firstAttribute="bottom" secondItem="sc" secondAttribute="bottom" id="v4"/>
+                        <constraint firstItem="fb" firstAttribute="width" secondItem="sc" secondAttribute="width" id="v5"/>
+                    </constraints>
+                </scrollView>
+                <view hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb">
+                    <subviews>
+                        <label opaque="NO" text="Empty" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="et"/>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="et" firstAttribute="top" secondItem="eb" secondAttribute="top" constant="24" id="w1"/>
+                        <constraint firstItem="et" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="w2"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="et" secondAttribute="trailing" constant="16" id="w3"/>
+                        <constraint firstItem="eb" firstAttribute="bottom" secondItem="et" secondAttribute="bottom" constant="24" id="w4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="safe"/>
+            <color key="backgroundColor" name="plp_background"/>
+            <constraints>
+                <constraint firstItem="sc" firstAttribute="top" secondItem="safe" secondAttribute="top" id="z1"/>
+                <constraint firstItem="sc" firstAttribute="leading" secondItem="safe" secondAttribute="leading" id="z2"/>
+                <constraint firstItem="sc" firstAttribute="trailing" secondItem="safe" secondAttribute="trailing" id="z3"/>
+                <constraint firstItem="sc" firstAttribute="bottom" secondItem="safe" secondAttribute="bottom" id="z4"/>
+                <constraint firstItem="eb" firstAttribute="centerY" secondItem="root" secondAttribute="centerY" id="z5"/>
+                <constraint firstItem="eb" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="z6"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="eb" secondAttribute="trailing" constant="16" id="z7"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="plp_background">
+            <color red="0.0" green="0.212" blue="0.227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,1 @@
+calorie,macro,food,log,barcode,scan,nutrition,tracker,diet,portion,offline,accessibility

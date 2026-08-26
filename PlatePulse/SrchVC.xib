@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SrchVC" customModule="PlatePulse" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="root" id="ov"/>
+                <outlet property="field" destination="fd" id="o0"/>
+                <outlet property="table" destination="tb" id="o1"/>
+                <outlet property="spin" destination="sp" id="o2"/>
+                <outlet property="emptyBox" destination="eb" id="o3"/>
+                <outlet property="emptyImg" destination="ei" id="o4"/>
+                <outlet property="emptyTitle" destination="et" id="o5"/>
+                <outlet property="emptyBody" destination="ey" id="o6"/>
+                <outlet property="emptyBtn" destination="en" id="o7"/>
+                <outlet property="errBox" destination="rb" id="o8"/>
+                <outlet property="errLbl" destination="el" id="o9"/>
+                <outlet property="retryBtn" destination="rt" id="o10"/>
+                <outlet property="idleLbl" destination="il" id="o11"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="root">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd">
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="fdh"/>
+                    </constraints>
+                </textField>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sp"/>
+                <label opaque="NO" text="Idle" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="il"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tb">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb">
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ei">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="eih"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" text="Empty" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="et"/>
+                        <label opaque="NO" text="Body" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ey"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="en">
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="enh"/>
+                            </constraints>
+                            <state key="normal" title="Scan"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ei" firstAttribute="top" secondItem="eb" secondAttribute="top" constant="8" id="s1"/>
+                        <constraint firstItem="ei" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="8" id="s2"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="ei" secondAttribute="trailing" constant="8" id="s3"/>
+                        <constraint firstItem="et" firstAttribute="top" secondItem="ei" secondAttribute="bottom" constant="8" id="s4"/>
+                        <constraint firstItem="et" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="8" id="s5"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="et" secondAttribute="trailing" constant="8" id="s6"/>
+                        <constraint firstItem="ey" firstAttribute="top" secondItem="et" secondAttribute="bottom" constant="8" id="s7"/>
+                        <constraint firstItem="ey" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="8" id="s8"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="ey" secondAttribute="trailing" constant="8" id="s9"/>
+                        <constraint firstItem="en" firstAttribute="top" secondItem="ey" secondAttribute="bottom" constant="8" id="s10"/>
+                        <constraint firstItem="en" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="8" id="s11"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="en" secondAttribute="trailing" constant="8" id="s12"/>
+                        <constraint firstItem="eb" firstAttribute="bottom" secondItem="en" secondAttribute="bottom" constant="8" id="s13"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rb">
+                    <subviews>
+                        <label opaque="NO" text="Error" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="el"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="rt">
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="rth"/>
+                            </constraints>
+                            <state key="normal" title="Retry"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="el" firstAttribute="top" secondItem="rb" secondAttribute="top" constant="16" id="r1"/>
+                        <constraint firstItem="el" firstAttribute="leading" secondItem="rb" secondAttribute="leading" constant="16" id="r2"/>
+                        <constraint firstItem="rb" firstAttribute="trailing" secondItem="el" secondAttribute="trailing" constant="16" id="r3"/>
+                        <constraint firstItem="rt" firstAttribute="top" secondItem="el" secondAttribute="bottom" constant="12" id="r4"/>
+                        <constraint firstItem="rt" firstAttribute="leading" secondItem="rb" secondAttribute="leading" constant="16" id="r5"/>
+                        <constraint firstItem="rb" firstAttribute="trailing" secondItem="rt" secondAttribute="trailing" constant="16" id="r6"/>
+                        <constraint firstItem="rb" firstAttribute="bottom" secondItem="rt" secondAttribute="bottom" constant="16" id="r7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="safe"/>
+            <color key="backgroundColor" name="plp_background"/>
+            <constraints>
+                <constraint firstItem="fd" firstAttribute="top" secondItem="safe" secondAttribute="top" constant="8" id="q1"/>
+                <constraint firstItem="fd" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="q2"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="fd" secondAttribute="trailing" constant="16" id="q3"/>
+                <constraint firstItem="tb" firstAttribute="top" secondItem="fd" secondAttribute="bottom" constant="8" id="q4"/>
+                <constraint firstItem="tb" firstAttribute="leading" secondItem="safe" secondAttribute="leading" id="q5"/>
+                <constraint firstItem="tb" firstAttribute="trailing" secondItem="safe" secondAttribute="trailing" id="q6"/>
+                <constraint firstItem="tb" firstAttribute="bottom" secondItem="safe" secondAttribute="bottom" id="q7"/>
+                <constraint firstItem="sp" firstAttribute="centerX" secondItem="root" secondAttribute="centerX" id="q8"/>
+                <constraint firstItem="sp" firstAttribute="centerY" secondItem="root" secondAttribute="centerY" id="q9"/>
+                <constraint firstItem="il" firstAttribute="top" secondItem="fd" secondAttribute="bottom" constant="24" id="q10"/>
+                <constraint firstItem="il" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="q11"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="il" secondAttribute="trailing" constant="16" id="q12"/>
+                <constraint firstItem="eb" firstAttribute="top" secondItem="fd" secondAttribute="bottom" constant="16" id="q13"/>
+                <constraint firstItem="eb" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="q14"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="eb" secondAttribute="trailing" constant="16" id="q15"/>
+                <constraint firstItem="rb" firstAttribute="top" secondItem="fd" secondAttribute="bottom" constant="16" id="q16"/>
+                <constraint firstItem="rb" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="q17"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="rb" secondAttribute="trailing" constant="16" id="q18"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="plp_background">
+            <color red="0.0" green="0.212" blue="0.227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

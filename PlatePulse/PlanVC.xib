@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanVC" customModule="PlatePulse" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="root" id="ov"/>
+                <outlet property="titleLbl" destination="tt" id="o0"/>
+                <outlet property="hintLbl" destination="hl" id="o1"/>
+                <outlet property="table" destination="tb" id="o2"/>
+                <outlet property="emptyBox" destination="eb" id="o3"/>
+                <outlet property="emptyImg" destination="ei" id="o4"/>
+                <outlet property="emptyTitle" destination="et" id="o5"/>
+                <outlet property="emptyBody" destination="ey" id="o6"/>
+                <outlet property="emptyBtn" destination="en" id="o7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="root">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="tt"/>
+                <label opaque="NO" text="Hint" translatesAutoresizingMaskIntoConstraints="NO" id="hl"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tb">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb">
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ei">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="eih"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" text="Empty" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="et"/>
+                        <label opaque="NO" text="Body" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ey"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="en">
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="enh"/>
+                            </constraints>
+                            <state key="normal" title="Action"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ei" firstAttribute="top" secondItem="eb" secondAttribute="top" constant="16" id="ee1"/>
+                        <constraint firstItem="ei" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="ee2"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="ei" secondAttribute="trailing" constant="16" id="ee3"/>
+                        <constraint firstItem="et" firstAttribute="top" secondItem="ei" secondAttribute="bottom" constant="8" id="ee4"/>
+                        <constraint firstItem="et" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="ee5"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="et" secondAttribute="trailing" constant="16" id="ee6"/>
+                        <constraint firstItem="ey" firstAttribute="top" secondItem="et" secondAttribute="bottom" constant="8" id="ee7"/>
+                        <constraint firstItem="ey" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="ee8"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="ey" secondAttribute="trailing" constant="16" id="ee9"/>
+                        <constraint firstItem="en" firstAttribute="top" secondItem="ey" secondAttribute="bottom" constant="16" id="ee10"/>
+                        <constraint firstItem="en" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="ee11"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="en" secondAttribute="trailing" constant="16" id="ee12"/>
+                        <constraint firstItem="eb" firstAttribute="bottom" secondItem="en" secondAttribute="bottom" constant="16" id="ee13"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="safe"/>
+            <color key="backgroundColor" name="plp_background"/>
+            <constraints>
+                <constraint firstItem="tt" firstAttribute="top" secondItem="safe" secondAttribute="top" constant="8" id="l1"/>
+                <constraint firstItem="tt" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="l2"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="tt" secondAttribute="trailing" constant="16" id="l3"/>
+                <constraint firstItem="hl" firstAttribute="top" secondItem="tt" secondAttribute="bottom" constant="8" id="l4"/>
+                <constraint firstItem="hl" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="l5"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="hl" secondAttribute="trailing" constant="16" id="l6"/>
+                <constraint firstItem="tb" firstAttribute="top" secondItem="hl" secondAttribute="bottom" constant="8" id="l7"/>
+                <constraint firstItem="eb" firstAttribute="top" secondItem="hl" secondAttribute="bottom" constant="24" id="l14"/>
+                <constraint firstItem="tb" firstAttribute="leading" secondItem="safe" secondAttribute="leading" id="l8"/>
+                <constraint firstItem="tb" firstAttribute="trailing" secondItem="safe" secondAttribute="trailing" id="l9"/>
+                <constraint firstItem="tb" firstAttribute="bottom" secondItem="safe" secondAttribute="bottom" id="l10"/>
+                <constraint firstItem="eb" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="l11"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="eb" secondAttribute="trailing" constant="16" id="l12"/>
+                <constraint firstItem="eb" firstAttribute="centerY" secondItem="root" secondAttribute="centerY" id="l13"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="plp_background">
+            <color red="0.0" green="0.212" blue="0.227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

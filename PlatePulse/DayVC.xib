@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DayVC" customModule="PlatePulse" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="root" id="ov"/>
+                <outlet property="scroll" destination="sc" id="o0"/>
+                <outlet property="texImg" destination="tx" id="o1"/>
+                <outlet property="headImg" destination="hd" id="o2"/>
+                <outlet property="titleLbl" destination="tt" id="o3"/>
+                <outlet property="energyLbl" destination="en" id="o4"/>
+                <outlet property="energySubLbl" destination="es" id="o5"/>
+                <outlet property="kcalBar" destination="kb" id="o6"/>
+                <outlet property="protImg" destination="pi" id="o7"/>
+                <outlet property="protLbl" destination="pl" id="o8"/>
+                <outlet property="protBar" destination="pb" id="o9"/>
+                <outlet property="carbImg" destination="ci" id="o10"/>
+                <outlet property="carbLbl" destination="clb" id="o11"/>
+                <outlet property="carbBar" destination="cb" id="o12"/>
+                <outlet property="fatImg" destination="fi" id="o13"/>
+                <outlet property="fatLbl" destination="fl" id="o14"/>
+                <outlet property="fatBar" destination="fb" id="o15"/>
+                <outlet property="table" destination="tb" id="o16"/>
+                <outlet property="tableH" destination="th" id="o17"/>
+                <outlet property="srchBtn" destination="sb" id="o18"/>
+                <outlet property="scanBtn" destination="nb" id="o19"/>
+                <outlet property="wishBtn" destination="wb" id="o20"/>
+                <outlet property="a11yBtn" destination="ab" id="o21"/>
+                <outlet property="emptyBox" destination="eb" id="o22"/>
+                <outlet property="emptyImg" destination="ei" id="o23"/>
+                <outlet property="emptyTitle" destination="et" id="o24"/>
+                <outlet property="emptyBody" destination="ey" id="o25"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="root">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tx"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sc">
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <subviews>
+                        <view translatesAutoresizingMaskIntoConstraints="NO" id="cv">
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="96" id="hdh"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" text="Today Pulse" translatesAutoresizingMaskIntoConstraints="NO" id="tt"/>
+                                <label opaque="NO" text="0" translatesAutoresizingMaskIntoConstraints="NO" id="en"/>
+                                <label opaque="NO" text="of target" translatesAutoresizingMaskIntoConstraints="NO" id="es"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb" customClass="PulseBar" customModule="PlatePulse" customModuleProvider="target">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="kbh"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ms">
+                                    <subviews>
+                                        <stackView axis="horizontal" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ps">
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pi">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="28" id="piw"/>
+                                                        <constraint firstAttribute="height" constant="28" id="pih"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" text="Protein" translatesAutoresizingMaskIntoConstraints="NO" id="pl"/>
+                                            </subviews>
+                                        </stackView>
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="pb" customClass="PulseBar" customModule="PlatePulse" customModuleProvider="target">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="pbh"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView axis="horizontal" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cs">
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ci">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="28" id="ciw"/>
+                                                        <constraint firstAttribute="height" constant="28" id="cih"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" text="Carbs" translatesAutoresizingMaskIntoConstraints="NO" id="clb"/>
+                                            </subviews>
+                                        </stackView>
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="cb" customClass="PulseBar" customModule="PlatePulse" customModuleProvider="target">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="cbh"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView axis="horizontal" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fs">
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fi">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="28" id="fiw"/>
+                                                        <constraint firstAttribute="height" constant="28" id="fih"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" text="Fat" translatesAutoresizingMaskIntoConstraints="NO" id="fl"/>
+                                            </subviews>
+                                        </stackView>
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="fb" customClass="PulseBar" customModule="PlatePulse" customModuleProvider="target">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="fbh"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tb">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="220" id="th"/>
+                                    </constraints>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                                <stackView axis="horizontal" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bs">
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="sb">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="sbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Search"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="nb">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="nbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Scan"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="wb">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="wbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Wish"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="ab">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="abh"/>
+                                            </constraints>
+                                            <state key="normal" title="Access"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <view hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb">
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ei">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="140" id="eih"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" text="Empty" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="et"/>
+                                        <label opaque="NO" text="Body" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ey"/>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ei" firstAttribute="top" secondItem="eb" secondAttribute="top" constant="16" id="e1"/>
+                                        <constraint firstItem="ei" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="e2"/>
+                                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="ei" secondAttribute="trailing" constant="16" id="e3"/>
+                                        <constraint firstItem="et" firstAttribute="top" secondItem="ei" secondAttribute="bottom" constant="8" id="e4"/>
+                                        <constraint firstItem="et" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="e5"/>
+                                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="et" secondAttribute="trailing" constant="16" id="e6"/>
+                                        <constraint firstItem="ey" firstAttribute="top" secondItem="et" secondAttribute="bottom" constant="8" id="e7"/>
+                                        <constraint firstItem="ey" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="e8"/>
+                                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="ey" secondAttribute="trailing" constant="16" id="e9"/>
+                                        <constraint firstItem="eb" firstAttribute="bottom" secondItem="ey" secondAttribute="bottom" constant="16" id="e10"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="hd" firstAttribute="top" secondItem="cv" secondAttribute="top" id="d1"/>
+                                <constraint firstItem="hd" firstAttribute="leading" secondItem="cv" secondAttribute="leading" id="d2"/>
+                                <constraint firstItem="hd" firstAttribute="trailing" secondItem="cv" secondAttribute="trailing" id="d3"/>
+                                <constraint firstItem="tt" firstAttribute="top" secondItem="hd" secondAttribute="bottom" constant="8" id="d4"/>
+                                <constraint firstItem="tt" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d5"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="tt" secondAttribute="trailing" constant="16" id="d6"/>
+                                <constraint firstItem="en" firstAttribute="top" secondItem="tt" secondAttribute="bottom" constant="8" id="d7"/>
+                                <constraint firstItem="en" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d8"/>
+                                <constraint firstItem="es" firstAttribute="top" secondItem="en" secondAttribute="bottom" constant="4" id="d9"/>
+                                <constraint firstItem="es" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d10"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="es" secondAttribute="trailing" constant="16" id="d11"/>
+                                <constraint firstItem="kb" firstAttribute="top" secondItem="es" secondAttribute="bottom" constant="8" id="d12"/>
+                                <constraint firstItem="kb" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d13"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="kb" secondAttribute="trailing" constant="16" id="d14"/>
+                                <constraint firstItem="ms" firstAttribute="top" secondItem="kb" secondAttribute="bottom" constant="16" id="d15"/>
+                                <constraint firstItem="ms" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d16"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="ms" secondAttribute="trailing" constant="16" id="d17"/>
+                                <constraint firstItem="tb" firstAttribute="top" secondItem="ms" secondAttribute="bottom" constant="16" id="d18"/>
+                                <constraint firstItem="tb" firstAttribute="leading" secondItem="cv" secondAttribute="leading" id="d19"/>
+                                <constraint firstItem="tb" firstAttribute="trailing" secondItem="cv" secondAttribute="trailing" id="d20"/>
+                                <constraint firstItem="bs" firstAttribute="top" secondItem="tb" secondAttribute="bottom" constant="16" id="d21"/>
+                                <constraint firstItem="bs" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d22"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="bs" secondAttribute="trailing" constant="16" id="d23"/>
+                                <constraint firstItem="eb" firstAttribute="top" secondItem="bs" secondAttribute="bottom" constant="16" id="d24"/>
+                                <constraint firstItem="eb" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d25"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="eb" secondAttribute="trailing" constant="16" id="d26"/>
+                                <constraint firstItem="cv" firstAttribute="bottom" secondItem="eb" secondAttribute="bottom" constant="24" id="d27"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="en" secondAttribute="trailing" constant="16" id="d28"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="cv" firstAttribute="top" secondItem="sc" secondAttribute="top" id="s1"/>
+                        <constraint firstItem="cv" firstAttribute="leading" secondItem="sc" secondAttribute="leading" id="s2"/>
+                        <constraint firstItem="cv" firstAttribute="trailing" secondItem="sc" secondAttribute="trailing" id="s3"/>
+                        <constraint firstItem="cv" firstAttribute="bottom" secondItem="sc" secondAttribute="bottom" id="s4"/>
+                        <constraint firstItem="cv" firstAttribute="width" secondItem="sc" secondAttribute="width" id="s5"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="safe"/>
+            <color key="backgroundColor" name="plp_background"/>
+            <constraints>
+                <constraint firstItem="tx" firstAttribute="top" secondItem="root" secondAttribute="top" id="t1"/>
+                <constraint firstItem="tx" firstAttribute="leading" secondItem="root" secondAttribute="leading" id="t2"/>
+                <constraint firstItem="tx" firstAttribute="trailing" secondItem="root" secondAttribute="trailing" id="t3"/>
+                <constraint firstItem="tx" firstAttribute="bottom" secondItem="root" secondAttribute="bottom" id="t4"/>
+                <constraint firstItem="sc" firstAttribute="top" secondItem="safe" secondAttribute="top" id="t5"/>
+                <constraint firstItem="sc" firstAttribute="leading" secondItem="safe" secondAttribute="leading" id="t6"/>
+                <constraint firstItem="sc" firstAttribute="trailing" secondItem="safe" secondAttribute="trailing" id="t7"/>
+                <constraint firstItem="sc" firstAttribute="bottom" secondItem="safe" secondAttribute="bottom" id="t8"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="plp_background">
+            <color red="0.0" green="0.212" blue="0.227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

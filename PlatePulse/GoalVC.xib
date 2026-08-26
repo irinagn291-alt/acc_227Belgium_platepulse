@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoalVC" customModule="PlatePulse" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="root" id="ov"/>
+                <outlet property="scroll" destination="sc" id="o0"/>
+                <outlet property="titleLbl" destination="tt" id="o1"/>
+                <outlet property="kcalField" destination="kf" id="o2"/>
+                <outlet property="protField" destination="pf" id="o3"/>
+                <outlet property="carbField" destination="cf" id="o4"/>
+                <outlet property="fatField" destination="ff" id="o5"/>
+                <outlet property="errLbl" destination="er" id="o6"/>
+                <outlet property="saveBtn" destination="sv" id="o7"/>
+                <outlet property="onbBtn" destination="ob" id="o8"/>
+                <outlet property="resetBtn" destination="rb" id="o9"/>
+                <outlet property="contactBtn" destination="cb" id="o10"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="root">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sc">
+                    <subviews>
+                        <stackView axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="st">
+                            <subviews>
+                                <label opaque="NO" text="Daily Goals" translatesAutoresizingMaskIntoConstraints="NO" id="tt"/>
+                                <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kcal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kf">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="kfh"/>
+                                    </constraints>
+                                </textField>
+                                <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="protein g" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pf">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="pfh"/>
+                                    </constraints>
+                                </textField>
+                                <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="carbs g" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cf">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="cfh"/>
+                                    </constraints>
+                                </textField>
+                                <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="fat g" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ff">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ffh"/>
+                                    </constraints>
+                                </textField>
+                                <label opaque="NO" text="" translatesAutoresizingMaskIntoConstraints="NO" id="er"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="sv">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="svh"/>
+                                    </constraints>
+                                    <state key="normal" title="Save targets"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="ob">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="obh"/>
+                                    </constraints>
+                                    <state key="normal" title="Re-run onboarding"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="rb">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="rbh"/>
+                                    </constraints>
+                                    <state key="normal" title="Reset all data"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="cb">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="cbh"/>
+                                    </constraints>
+                                    <state key="normal" title="Contact us"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="st" firstAttribute="top" secondItem="sc" secondAttribute="top" constant="16" id="g1"/>
+                        <constraint firstItem="st" firstAttribute="leading" secondItem="sc" secondAttribute="leading" constant="16" id="g2"/>
+                        <constraint firstItem="sc" firstAttribute="trailing" secondItem="st" secondAttribute="trailing" constant="16" id="g3"/>
+                        <constraint firstItem="sc" firstAttribute="bottom" secondItem="st" secondAttribute="bottom" constant="24" id="g4"/>
+                        <constraint firstItem="st" firstAttribute="width" secondItem="sc" secondAttribute="width" constant="-32" id="g5"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="safe"/>
+            <color key="backgroundColor" name="plp_background"/>
+            <constraints>
+                <constraint firstItem="sc" firstAttribute="top" secondItem="safe" secondAttribute="top" id="gx1"/>
+                <constraint firstItem="sc" firstAttribute="leading" secondItem="safe" secondAttribute="leading" id="gx2"/>
+                <constraint firstItem="sc" firstAttribute="trailing" secondItem="safe" secondAttribute="trailing" id="gx3"/>
+                <constraint firstItem="sc" firstAttribute="bottom" secondItem="safe" secondAttribute="bottom" id="gx4"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="plp_background">
+            <color red="0.0" green="0.212" blue="0.227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

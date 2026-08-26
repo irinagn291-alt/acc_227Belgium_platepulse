@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanVC" customModule="PlatePulse" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="root" id="ov"/>
+                <outlet property="previewBox" destination="pv" id="o0"/>
+                <outlet property="overlayImg" destination="ovl" id="o1"/>
+                <outlet property="trigBtn" destination="tg" id="o2"/>
+                <outlet property="manField" destination="mf" id="o3"/>
+                <outlet property="goBtn" destination="gb" id="o4"/>
+                <outlet property="chipBox" destination="ch" id="o5"/>
+                <outlet property="permBox" destination="pb" id="o6"/>
+                <outlet property="permLbl" destination="pl" id="o7"/>
+                <outlet property="permBtn" destination="pm" id="o8"/>
+                <outlet property="statusLbl" destination="sl" id="o9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="root">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sc">
+                    <subviews>
+                        <stackView axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="st">
+                            <subviews>
+                                <view translatesAutoresizingMaskIntoConstraints="NO" id="pv">
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ovl"/>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="280" id="pvh"/>
+                                        <constraint firstItem="ovl" firstAttribute="top" secondItem="pv" secondAttribute="top" id="ov1"/>
+                                        <constraint firstItem="ovl" firstAttribute="leading" secondItem="pv" secondAttribute="leading" id="ov2"/>
+                                        <constraint firstItem="ovl" firstAttribute="trailing" secondItem="pv" secondAttribute="trailing" id="ov3"/>
+                                        <constraint firstItem="ovl" firstAttribute="bottom" secondItem="pv" secondAttribute="bottom" id="ov4"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="tg">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="tgh"/>
+                                    </constraints>
+                                    <state key="normal" title="Lock reading"/>
+                                </button>
+                                <label opaque="NO" text="Status" translatesAutoresizingMaskIntoConstraints="NO" id="sl"/>
+                                <stackView axis="horizontal" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ms">
+                                    <subviews>
+                                        <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Barcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mf">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mfh"/>
+                                            </constraints>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="gb">
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="gbw"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="gbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Look up"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ch"/>
+                                <view translatesAutoresizingMaskIntoConstraints="NO" id="pb">
+                                    <subviews>
+                                        <label opaque="NO" text="Perm" translatesAutoresizingMaskIntoConstraints="NO" id="pl"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="pm">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="pmh"/>
+                                            </constraints>
+                                            <state key="normal" title="Allow"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pl" firstAttribute="top" secondItem="pb" secondAttribute="top" constant="12" id="p1"/>
+                                        <constraint firstItem="pl" firstAttribute="leading" secondItem="pb" secondAttribute="leading" constant="12" id="p2"/>
+                                        <constraint firstItem="pb" firstAttribute="trailing" secondItem="pl" secondAttribute="trailing" constant="12" id="p3"/>
+                                        <constraint firstItem="pm" firstAttribute="top" secondItem="pl" secondAttribute="bottom" constant="8" id="p4"/>
+                                        <constraint firstItem="pm" firstAttribute="leading" secondItem="pb" secondAttribute="leading" constant="12" id="p5"/>
+                                        <constraint firstItem="pb" firstAttribute="trailing" secondItem="pm" secondAttribute="trailing" constant="12" id="p6"/>
+                                        <constraint firstItem="pb" firstAttribute="bottom" secondItem="pm" secondAttribute="bottom" constant="12" id="p7"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="st" firstAttribute="top" secondItem="sc" secondAttribute="top" constant="8" id="n1"/>
+                        <constraint firstItem="st" firstAttribute="leading" secondItem="sc" secondAttribute="leading" constant="16" id="n2"/>
+                        <constraint firstItem="sc" firstAttribute="trailing" secondItem="st" secondAttribute="trailing" constant="16" id="n3"/>
+                        <constraint firstItem="sc" firstAttribute="bottom" secondItem="st" secondAttribute="bottom" constant="16" id="n4"/>
+                        <constraint firstItem="st" firstAttribute="width" secondItem="sc" secondAttribute="width" constant="-32" id="n5"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="safe"/>
+            <color key="backgroundColor" name="plp_background"/>
+            <constraints>
+                <constraint firstItem="sc" firstAttribute="top" secondItem="safe" secondAttribute="top" id="nx1"/>
+                <constraint firstItem="sc" firstAttribute="leading" secondItem="safe" secondAttribute="leading" id="nx2"/>
+                <constraint firstItem="sc" firstAttribute="trailing" secondItem="safe" secondAttribute="trailing" id="nx3"/>
+                <constraint firstItem="sc" firstAttribute="bottom" secondItem="safe" secondAttribute="bottom" id="nx4"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="plp_background">
+            <color red="0.0" green="0.212" blue="0.227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

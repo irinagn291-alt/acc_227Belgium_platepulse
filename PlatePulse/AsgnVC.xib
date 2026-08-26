@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AsgnVC" customModule="PlatePulse" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="root" id="ov"/>
+                <outlet property="scroll" destination="sc" id="o0"/>
+                <outlet property="titleLbl" destination="tt" id="o1"/>
+                <outlet property="dawnBtn" destination="db" id="o2"/>
+                <outlet property="noonBtn" destination="nb" id="o3"/>
+                <outlet property="duskBtn" destination="kb" id="o4"/>
+                <outlet property="intBtn" destination="ib" id="o5"/>
+                <outlet property="eatenBtn" destination="ebn" id="o6"/>
+                <outlet property="planBtn" destination="pbn" id="o7"/>
+                <outlet property="datePick" destination="dp" id="o8"/>
+                <outlet property="confirmBtn" destination="cf" id="o9"/>
+                <outlet property="emptyBox" destination="eb" id="o10"/>
+                <outlet property="emptyTitle" destination="et" id="o11"/>
+                <outlet property="noteLbl" destination="nl" id="o12"/>
+                <outlet property="formBox" destination="fb" id="o13"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="root">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sc">
+                    <subviews>
+                        <stackView axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fb">
+                            <subviews>
+                                <label opaque="NO" text="Assign" translatesAutoresizingMaskIntoConstraints="NO" id="tt"/>
+                                <stackView axis="horizontal" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ss">
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="db">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="dbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Dawn"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="nb">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="nbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Noon"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView axis="horizontal" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ss2">
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="kb">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="kbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Dusk"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="ib">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="ibh"/>
+                                            </constraints>
+                                            <state key="normal" title="Interval"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView axis="horizontal" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ss3">
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="ebn">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ebh"/>
+                                            </constraints>
+                                            <state key="normal" title="Eaten"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="pbn">
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="pbh"/>
+                                            </constraints>
+                                            <state key="normal" title="Plan"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dp">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="dph"/>
+                                    </constraints>
+                                </datePicker>
+                                <label opaque="NO" text="" translatesAutoresizingMaskIntoConstraints="NO" id="nl"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="cf">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="cfh"/>
+                                    </constraints>
+                                    <state key="normal" title="Confirm"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="fb" firstAttribute="top" secondItem="sc" secondAttribute="top" constant="8" id="a1"/>
+                        <constraint firstItem="fb" firstAttribute="leading" secondItem="sc" secondAttribute="leading" constant="16" id="a2"/>
+                        <constraint firstItem="sc" firstAttribute="trailing" secondItem="fb" secondAttribute="trailing" constant="16" id="a3"/>
+                        <constraint firstItem="sc" firstAttribute="bottom" secondItem="fb" secondAttribute="bottom" constant="16" id="a4"/>
+                        <constraint firstItem="fb" firstAttribute="width" secondItem="sc" secondAttribute="width" constant="-32" id="a5"/>
+                    </constraints>
+                </scrollView>
+                <view hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb">
+                    <subviews>
+                        <label opaque="NO" text="Empty" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="et"/>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="et" firstAttribute="top" secondItem="eb" secondAttribute="top" constant="24" id="e1"/>
+                        <constraint firstItem="et" firstAttribute="leading" secondItem="eb" secondAttribute="leading" constant="16" id="e2"/>
+                        <constraint firstItem="eb" firstAttribute="trailing" secondItem="et" secondAttribute="trailing" constant="16" id="e3"/>
+                        <constraint firstItem="eb" firstAttribute="bottom" secondItem="et" secondAttribute="bottom" constant="24" id="e4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="safe"/>
+            <color key="backgroundColor" name="plp_background"/>
+            <constraints>
+                <constraint firstItem="sc" firstAttribute="top" secondItem="safe" secondAttribute="top" id="x1"/>
+                <constraint firstItem="sc" firstAttribute="leading" secondItem="safe" secondAttribute="leading" id="x2"/>
+                <constraint firstItem="sc" firstAttribute="trailing" secondItem="safe" secondAttribute="trailing" id="x3"/>
+                <constraint firstItem="sc" firstAttribute="bottom" secondItem="safe" secondAttribute="bottom" id="x4"/>
+                <constraint firstItem="eb" firstAttribute="centerY" secondItem="root" secondAttribute="centerY" id="x5"/>
+                <constraint firstItem="eb" firstAttribute="leading" secondItem="safe" secondAttribute="leading" constant="16" id="x6"/>
+                <constraint firstItem="safe" firstAttribute="trailing" secondItem="eb" secondAttribute="trailing" constant="16" id="x7"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="plp_background">
+            <color red="0.0" green="0.212" blue="0.227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
