@@ -81,6 +81,7 @@ enum PulseSp {
 }
 
 enum PulseBtn {
+    @MainActor
     static func paint(_ btn: UIButton?, title: String, hi: Bool, accentInk: Bool = false) {
         guard let btn else { return }
         var config = UIButton.Configuration.bordered()
