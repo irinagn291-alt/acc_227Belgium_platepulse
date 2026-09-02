@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 struct LogRowVM: Sendable, Equatable {
     var id: UUID
@@ -28,19 +28,19 @@ protocol LogView: AnyObject {
 
 /// Formats the eaten list for one day.
 @MainActor
-final class LogPrsntr {
+final class LogPrsntr: NSObject {
     weak var view: LogView?
     weak var coord: NavCoord?
     private let store: PulseMgr
     private var day = DayKey.today()
-    private var notes: [NSObjectProtocol] = []
 
     init(store: PulseMgr) {
         self.store = store
-        notes.append(NotificationCenter.default.addObserver(forName: PulseNotif.store, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.reload() }
-        })
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(onStore), name: PulseNotif.store, object: nil)
     }
+
+    @objc private func onStore() { reload() }
 
     func reload() {
         Task { [weak self] in

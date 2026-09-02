@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 struct PlanRowVM: Sendable, Equatable {
     var id: UUID
@@ -27,18 +27,18 @@ protocol PlanView: AnyObject {
 
 /// Formats the 14-day planned horizon.
 @MainActor
-final class PlanPrsntr {
+final class PlanPrsntr: NSObject {
     weak var view: PlanView?
     weak var coord: NavCoord?
     private let store: PulseMgr
-    private var notes: [NSObjectProtocol] = []
 
     init(store: PulseMgr) {
         self.store = store
-        notes.append(NotificationCenter.default.addObserver(forName: PulseNotif.store, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.reload() }
-        })
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(onStore), name: PulseNotif.store, object: nil)
     }
+
+    @objc private func onStore() { reload() }
 
     func reload() {
         Task { [weak self] in await self?.push() }

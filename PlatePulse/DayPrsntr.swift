@@ -35,25 +35,22 @@ protocol DayView: AnyObject {
 
 /// Formats today's vitals and forwards actions to NavCoord.
 @MainActor
-final class DayPrsntr {
+final class DayPrsntr: NSObject {
     weak var view: DayView?
     weak var coord: NavCoord?
     private let store: PulseMgr
     private var task: Task<Void, Never>?
-    private var notes: [NSObjectProtocol] = []
 
     init(store: PulseMgr) {
         self.store = store
-        notes.append(NotificationCenter.default.addObserver(forName: PulseNotif.store, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.reload() }
-        })
-        notes.append(NotificationCenter.default.addObserver(forName: PulseNotif.a11y, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.reload() }
-        })
-        notes.append(NotificationCenter.default.addObserver(forName: UIApplication.significantTimeChangeNotification, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.reload() }
-        })
+        super.init()
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(onStore), name: PulseNotif.store, object: nil)
+        center.addObserver(self, selector: #selector(onStore), name: PulseNotif.a11y, object: nil)
+        center.addObserver(self, selector: #selector(onStore), name: UIApplication.significantTimeChangeNotification, object: nil)
     }
+
+    @objc private func onStore() { reload() }
 
     func reload() {
         task?.cancel()

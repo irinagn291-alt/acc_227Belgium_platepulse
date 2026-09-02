@@ -80,8 +80,8 @@ enum PulseSp {
     static func n(_ k: CGFloat) -> CGFloat { u * k }
 }
 
+@MainActor
 enum PulseBtn {
-    @MainActor
     static func paint(_ btn: UIButton?, title: String, hi: Bool, accentInk: Bool = false) {
         guard let btn else { return }
         var config = UIButton.Configuration.bordered()
@@ -108,6 +108,7 @@ enum PulseNotif {
     static let a11y = Notification.Name("plp.a11y")
 }
 
+@MainActor
 final class PulseBar: UIView {
     private let fill = UIView()
     private var fillW: NSLayoutConstraint?

@@ -2,6 +2,7 @@ import UIKit
 
 /// Process entry. Window is built in SceneDelegate.
 @main
+@MainActor
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
