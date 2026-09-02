@@ -22,6 +22,8 @@
                 <outlet property="saveBtn" destination="sv" id="o7"/>
                 <outlet property="onbBtn" destination="ob" id="o8"/>
                 <outlet property="resetBtn" destination="rb" id="o9"/>
+                <outlet property="citeNote" destination="cn" id="o11"/>
+                <outlet property="citeBtn" destination="cs" id="o12"/>
                 <outlet property="contactBtn" destination="cb" id="o10"/>
             </connections>
         </placeholder>
@@ -35,6 +37,7 @@
                         <stackView axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="st">
                             <subviews>
                                 <label opaque="NO" text="Daily Goals" translatesAutoresizingMaskIntoConstraints="NO" id="tt"/>
+                                <label opaque="NO" text="" translatesAutoresizingMaskIntoConstraints="NO" id="cn"/>
                                 <textField opaque="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kcal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kf">
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="kfh"/>
@@ -73,6 +76,12 @@
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="rbh"/>
                                     </constraints>
                                     <state key="normal" title="Reset all data"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="cs">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="csh"/>
+                                    </constraints>
+                                    <state key="normal" title="Sources"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="cb">
                                     <constraints>

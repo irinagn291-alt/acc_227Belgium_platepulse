@@ -22,6 +22,7 @@ struct ScanVM: Sendable {
 @MainActor
 protocol ScanView: AnyObject {
     func render(_ vm: ScanVM)
+    func armLive()
 }
 
 /// Live scan presenter. Large trigger confirms the last spoken code.
@@ -72,9 +73,10 @@ final class ScanPrsntr {
     }
 
     func askCam() {
-        AVCaptureDevice.requestAccess(for: .video) { [weak self] _ in
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
             Task { @MainActor in
                 self?.reload()
+                if granted { self?.view?.armLive() }
             }
         }
     }
@@ -152,13 +154,13 @@ final class ScanPrsntr {
             body = "Parental or device limits blocked the camera. Open Settings if you can change them."
         case .none:
             title = "No camera on this device"
-            body = "Use a sample chip or type a barcode. The log still works."
+            body = "Use a sample chip, type a barcode, or paste a QR product link. The log still works."
         }
         view?.render(ScanVM(
             perm: perm,
             permTitle: title,
             permBody: body,
-            status: status ?? "Live read. Each code is spoken, then lock it.",
+            status: status ?? "Live read. Barcode or QR. Each code is spoken, then lock it.",
             chips: ShelfStore.all.map(\.code),
             hi: hi,
             hasCam: has && perm == .ok

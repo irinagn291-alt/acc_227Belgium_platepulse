@@ -14,6 +14,8 @@ final class GoalVC: UIViewController, GoalView, UITextFieldDelegate, UIScrollVie
     @IBOutlet private weak var saveBtn: UIButton!
     @IBOutlet private weak var onbBtn: UIButton!
     @IBOutlet private weak var resetBtn: UIButton!
+    @IBOutlet private weak var citeNote: UILabel!
+    @IBOutlet private weak var citeBtn: UIButton!
     @IBOutlet private weak var contactBtn: UIButton!
     private var kbd: [NSObjectProtocol] = []
     private var hi = false
@@ -40,9 +42,12 @@ final class GoalVC: UIViewController, GoalView, UITextFieldDelegate, UIScrollVie
         onbBtn.addTarget(self, action: #selector(onb), for: .touchUpInside)
         resetBtn.addTarget(self, action: #selector(reset), for: .touchUpInside)
         contactBtn.addTarget(self, action: #selector(contact), for: .touchUpInside)
+        citeBtn.addTarget(self, action: #selector(cite), for: .touchUpInside)
         saveBtn.accessibilityLabel = "Save targets"
         onbBtn.accessibilityLabel = "Re-run onboarding"
         resetBtn.accessibilityLabel = "Reset all data"
+        citeBtn.accessibilityLabel = "Sources and citations"
+        citeBtn.accessibilityHint = "Opens links to USDA, FDA, Open Food Facts and Dietary Reference Intakes"
         contactBtn.accessibilityLabel = "Contact PlatePulse"
         contactBtn.accessibilityHint = "Opens platepulse.pro contact page"
         _ = PulseKbd.dismissTap(view)
@@ -59,6 +64,7 @@ final class GoalVC: UIViewController, GoalView, UITextFieldDelegate, UIScrollVie
         hi = vm.hi
         view.backgroundColor = PulseHue.bg(vm.hi)
         titleLbl.do { $0.text = vm.title; $0.font = PulseType.font(.title, bold: true); $0.textColor = PulseHue.ink(vm.hi); $0.adjustsFontForContentSizeCategory = true }
+        citeNote.do { $0.text = vm.cite; $0.font = PulseType.font(.caption); $0.textColor = PulseHue.muted(vm.hi); $0.adjustsFontForContentSizeCategory = true; $0.numberOfLines = 0 }
         if kcalField.text != vm.kcal { kcalField.text = vm.kcal }
         if protField.text != vm.prot { protField.text = vm.prot }
         if carbField.text != vm.carb { carbField.text = vm.carb }
@@ -71,6 +77,7 @@ final class GoalVC: UIViewController, GoalView, UITextFieldDelegate, UIScrollVie
         [kcalField, protField, carbField, fatField].forEach { paintField($0, vm.hi) }
         PulseBtn.paint(saveBtn, title: "Save targets", hi: vm.hi)
         PulseBtn.paint(onbBtn, title: "Re-run onboarding", hi: vm.hi)
+        PulseBtn.paint(citeBtn, title: "Sources", hi: vm.hi)
         PulseBtn.paint(contactBtn, title: "Contact us", hi: vm.hi)
         PulseBtn.paint(resetBtn, title: "Reset all data", hi: vm.hi, accentInk: true)
     }
@@ -100,6 +107,8 @@ final class GoalVC: UIViewController, GoalView, UITextFieldDelegate, UIScrollVie
         })
         present(a, animated: !UIAccessibility.isReduceMotionEnabled)
     }
+
+    @objc private func cite() { prsntr.tapCite() }
 
     @objc private func contact() {
         WebContentHost.presentContact(from: self)

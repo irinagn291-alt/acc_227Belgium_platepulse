@@ -21,9 +21,33 @@ enum CodeNorm {
         code.count == 12 ? "0" + code : code
     }
 
-    static func primary(_ raw: String) -> String? {
+    static func padRun(_ raw: String) -> String? {
         guard let first = runs(raw).first else { return nil }
         return pad(first)
+    }
+
+    /// QR payloads are often an Open Food Facts / GS1 URL, not bare digits.
+    static func qrCode(_ raw: String) -> String? {
+        let trim = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let url = URL(string: trim), url.scheme != nil else { return nil }
+        let keys: Set<String> = ["ean", "ean13", "ean_13", "gtin", "code", "barcode"]
+        if let items = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems {
+            for item in items {
+                guard keys.contains(item.name.lowercased()), let value = item.value else { continue }
+                if let code = padRun(value) { return code }
+            }
+        }
+        let parts = url.pathComponents
+        if let i = parts.firstIndex(where: { $0.caseInsensitiveCompare("product") == .orderedSame }),
+           let next = parts[safe: i + 1],
+           let code = padRun(next) {
+            return code
+        }
+        return parts.reversed().compactMap(padRun).first
+    }
+
+    static func primary(_ raw: String) -> String? {
+        qrCode(raw) ?? padRun(raw)
     }
 
     static func cands(_ raw: String) -> [String] {
@@ -32,6 +56,10 @@ enum CodeNorm {
         func add(_ s: String) {
             guard !s.isEmpty, seen.insert(s).inserted else { return }
             out.append(s)
+        }
+        if let q = qrCode(raw) {
+            add(q)
+            if q.count == 13, q.hasPrefix("0") { add(String(q.dropFirst())) }
         }
         for r in runs(raw) {
             add(pad(r))

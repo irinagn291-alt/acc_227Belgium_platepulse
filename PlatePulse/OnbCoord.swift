@@ -27,4 +27,19 @@ final class OnbCoord: Coord {
     func finished() {
         didFinish?()
     }
+
+    func openCite() {
+        let cite = CiteCoord(store: store)
+        cite.didFinish = { [weak self, weak cite] in
+            guard let self, let cite else { return }
+            self.dropKid(cite)
+        }
+        addKid(cite)
+        cite.start()
+        if UIAccessibility.isReduceMotionEnabled {
+            cite.root.modalTransitionStyle = .crossDissolve
+        }
+        cite.root.modalPresentationStyle = .pageSheet
+        root.present(cite.root, animated: !UIAccessibility.isReduceMotionEnabled)
+    }
 }

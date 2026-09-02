@@ -49,6 +49,10 @@ final class OnbPrsntr {
         finish(.seed)
     }
 
+    func tapCite() {
+        coord?.openCite()
+    }
+
     func edit(kcal: String?, prot: String?, carb: String?, fat: String?) {
         if let kcal, let v = PulseFmt.parseDec(kcal) { draft.kcal = v }
         if let prot, let v = PulseFmt.parseDec(prot) { draft.prot = v }
@@ -75,8 +79,8 @@ final class OnbPrsntr {
         let bodies = [
             "PlatePulse is a personal food log with monitor-clear readings. It is not medical advice.",
             "Find a product by name or lock a barcode. Every control is built for VoiceOver and large type.",
-            "Energy, protein, carbs and fat sit against targets you can change any time.",
-            "Keep these starting readings or write your own. Skip still saves a sensible set."
+            "Energy, protein, carbs and fat sit against targets you can change any time. Starting values follow USDA, FDA and National Academies references — open Sources for links.",
+            "Keep these starting readings or write your own. Skip still saves a 2,000 kcal set from the Dietary Guidelines reference. Sources lists every citation."
         ]
         view?.render(OnbVM(
             page: page,

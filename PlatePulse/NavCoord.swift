@@ -96,6 +96,17 @@ final class NavCoord: Coord {
         present(a11y.root)
     }
 
+    func openCite() {
+        let cite = CiteCoord(store: store)
+        cite.didFinish = { [weak self, weak cite] in
+            guard let self, let cite else { return }
+            self.dropKid(cite)
+        }
+        addKid(cite)
+        cite.start()
+        present(cite.root)
+    }
+
     func rerunOnb() {
         (parent as? AppCoord)?.rerunOnb()
     }

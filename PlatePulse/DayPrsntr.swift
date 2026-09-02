@@ -66,6 +66,7 @@ final class DayPrsntr {
     func tapScan() { coord?.openFlow(page: .scan) }
     func tapWish() { coord?.openWish() }
     func tapA11y() { coord?.openA11y() }
+    func tapCite() { coord?.openCite() }
 
     private func push() async {
         let key = DayKey.today()

@@ -4,6 +4,8 @@ Readable by everyone, always. PlatePulse is an offline-first calorie and macro l
 
 Open Food Facts supplies product data. Nutrition credit belongs to that public database.
 
+Sources (in-app, on Today, Goals, onboarding and Detail): Open Food Facts, USDA / HHS Dietary Guidelines for Americans 2020–2025, FDA Daily Values, and National Academies Dietary Reference Intakes (AMDR). Each row opens the official page. Starting 2,000 kcal / macro grams follow those references and are not medical advice.
+
 ## Who it is for
 
 Anyone who wants to log energy and macros without typing every field, including VoiceOver users, large-type users, and anyone who prefers swipe over deep navigation stacks.

@@ -34,6 +34,7 @@
                 <outlet property="scanBtn" destination="nb" id="o19"/>
                 <outlet property="wishBtn" destination="wb" id="o20"/>
                 <outlet property="a11yBtn" destination="ab" id="o21"/>
+                <outlet property="citeBtn" destination="ct" id="o26"/>
                 <outlet property="emptyBox" destination="eb" id="o22"/>
                 <outlet property="emptyImg" destination="ei" id="o23"/>
                 <outlet property="emptyTitle" destination="et" id="o24"/>
@@ -150,6 +151,12 @@
                                         </button>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="ct">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="cth"/>
+                                    </constraints>
+                                    <state key="normal" title="Sources"/>
+                                </button>
                                 <view hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb">
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ei">
@@ -198,7 +205,10 @@
                                 <constraint firstItem="bs" firstAttribute="top" secondItem="tb" secondAttribute="bottom" constant="16" id="d21"/>
                                 <constraint firstItem="bs" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d22"/>
                                 <constraint firstItem="cv" firstAttribute="trailing" secondItem="bs" secondAttribute="trailing" constant="16" id="d23"/>
-                                <constraint firstItem="eb" firstAttribute="top" secondItem="bs" secondAttribute="bottom" constant="16" id="d24"/>
+                                <constraint firstItem="ct" firstAttribute="top" secondItem="bs" secondAttribute="bottom" constant="16" id="d29"/>
+                                <constraint firstItem="ct" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d30"/>
+                                <constraint firstItem="cv" firstAttribute="trailing" secondItem="ct" secondAttribute="trailing" constant="16" id="d31"/>
+                                <constraint firstItem="eb" firstAttribute="top" secondItem="ct" secondAttribute="bottom" constant="16" id="d24"/>
                                 <constraint firstItem="eb" firstAttribute="leading" secondItem="cv" secondAttribute="leading" constant="16" id="d25"/>
                                 <constraint firstItem="cv" firstAttribute="trailing" secondItem="eb" secondAttribute="trailing" constant="16" id="d26"/>
                                 <constraint firstItem="cv" firstAttribute="bottom" secondItem="eb" secondAttribute="bottom" constant="24" id="d27"/>

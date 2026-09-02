@@ -20,4 +20,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         cfg.delegateClass = SceneDelegate.self
         return cfg
     }
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        UIDevice.current.userInterfaceIdiom == .pad ? .all : .portrait
+    }
 }

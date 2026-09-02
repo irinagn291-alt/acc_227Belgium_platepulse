@@ -34,6 +34,7 @@ final class DayVC: UIViewController, DayView, UITableViewDataSource, UITableView
     @IBOutlet private weak var scanBtn: UIButton!
     @IBOutlet private weak var wishBtn: UIButton!
     @IBOutlet private weak var a11yBtn: UIButton!
+    @IBOutlet private weak var citeBtn: UIButton!
     @IBOutlet private weak var emptyBox: UIView!
     @IBOutlet private weak var emptyImg: UIImageView!
     @IBOutlet private weak var emptyTitle: UILabel!
@@ -65,6 +66,7 @@ final class DayVC: UIViewController, DayView, UITableViewDataSource, UITableView
         wire(scanBtn, "Scan barcode", "Opens the live barcode reader", #selector(scan))
         wire(wishBtn, "Wish shelf", "Opens saved products", #selector(wish))
         wire(a11yBtn, "Access Mode", "Opens high contrast and accessibility controls", #selector(a11y))
+        wire(citeBtn, "Sources and citations", "Opens links to USDA, FDA, Open Food Facts and Dietary Reference Intakes", #selector(cite))
         a11yBtn.setImage(nil, for: .normal)
         energyLbl.adjustsFontForContentSizeCategory = true
         energyLbl.accessibilityTraits = [.header, .updatesFrequently]
@@ -126,6 +128,7 @@ final class DayVC: UIViewController, DayView, UITableViewDataSource, UITableView
         paintBtn(scanBtn, "Scan", vm.hi)
         paintBtn(wishBtn, "Wish", vm.hi)
         paintBtn(a11yBtn, "Access", vm.hi)
+        paintBtn(citeBtn, "Sources", vm.hi)
         table.reloadData()
         table.layoutIfNeeded()
         tableH.constant = max(table.contentSize.height, 44)
@@ -150,6 +153,7 @@ final class DayVC: UIViewController, DayView, UITableViewDataSource, UITableView
     @objc private func scan() { prsntr.tapScan() }
     @objc private func wish() { prsntr.tapWish() }
     @objc private func a11y() { prsntr.tapA11y() }
+    @objc private func cite() { prsntr.tapCite() }
 
     private func wire(_ btn: UIButton, _ label: String, _ hint: String, _ sel: Selector) {
         btn.addTarget(self, action: sel, for: .touchUpInside)

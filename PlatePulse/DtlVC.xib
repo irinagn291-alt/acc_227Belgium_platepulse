@@ -32,6 +32,7 @@
                 <outlet property="emptyTitle" destination="et" id="o17"/>
                 <outlet property="missLbl" destination="ml" id="o18"/>
                 <outlet property="formBox" destination="fb" id="o19"/>
+                <outlet property="citeBtn" destination="cs" id="o20"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -82,6 +83,12 @@
                                     </constraints>
                                     <state key="normal" title="Wish"/>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="cs">
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="csh"/>
+                                    </constraints>
+                                    <state key="normal" title="Open Food Facts"/>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="bi" firstAttribute="top" secondItem="fb" secondAttribute="top" id="u1"/>
@@ -122,7 +129,10 @@
                                 <constraint firstItem="wb" firstAttribute="top" secondItem="ab" secondAttribute="bottom" constant="8" id="u36"/>
                                 <constraint firstItem="wb" firstAttribute="leading" secondItem="ab" secondAttribute="leading" id="u37"/>
                                 <constraint firstItem="wb" firstAttribute="trailing" secondItem="ab" secondAttribute="trailing" id="u38"/>
-                                <constraint firstItem="fb" firstAttribute="bottom" secondItem="wb" secondAttribute="bottom" constant="24" id="u39"/>
+                                <constraint firstItem="cs" firstAttribute="top" secondItem="wb" secondAttribute="bottom" constant="8" id="u41"/>
+                                <constraint firstItem="cs" firstAttribute="leading" secondItem="ab" secondAttribute="leading" id="u42"/>
+                                <constraint firstItem="cs" firstAttribute="trailing" secondItem="ab" secondAttribute="trailing" id="u43"/>
+                                <constraint firstItem="fb" firstAttribute="bottom" secondItem="cs" secondAttribute="bottom" constant="24" id="u39"/>
                                 <constraint firstItem="fb" firstAttribute="trailing" secondItem="k1" secondAttribute="trailing" constant="16" id="u40"/>
                             </constraints>
                         </view>

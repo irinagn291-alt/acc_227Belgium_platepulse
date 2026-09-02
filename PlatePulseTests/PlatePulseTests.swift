@@ -35,6 +35,22 @@ final class CodeNormTests: XCTestCase {
         XCTAssertEqual(CodeNorm.primary(url), "0737628064502")
     }
 
+    func testQRProductSlug() {
+        let url = "https://world.openfoodfacts.org/product/3017620422003/hazelnut-spread"
+        XCTAssertEqual(CodeNorm.primary(url), "3017620422003")
+        XCTAssertEqual(CodeNorm.cands(url).first, "3017620422003")
+    }
+
+    func testQRQueryGTIN() {
+        let url = "https://id.gs1.org/01?gtin=0074354611200"
+        XCTAssertEqual(CodeNorm.primary(url), "0074354611200")
+    }
+
+    func testQRBareDigits() {
+        XCTAssertEqual(CodeNorm.qrCode("3068320114486"), nil)
+        XCTAssertEqual(CodeNorm.primary("3068320114486"), "3068320114486")
+    }
+
     func testNoDigitRun() {
         XCTAssertNil(CodeNorm.primary("no-code-here"))
         XCTAssertTrue(CodeNorm.cands("abc").isEmpty)
@@ -177,6 +193,39 @@ final class SlotRuleTests: XCTestCase {
         XCTAssertEqual(SlotRule.resolve(slot: .interval, future: true), .dusk)
         XCTAssertEqual(SlotRule.resolve(slot: .interval, future: false), .interval)
         XCTAssertEqual(SlotRule.resolve(slot: .dawn, future: true), .dawn)
+    }
+}
+
+final class CiteSrcTests: XCTestCase {
+    func testEverySourceHasHTTPSLink() {
+        XCTAssertEqual(CiteSrc.allCases.count, 4)
+        for src in CiteSrc.allCases {
+            XCTAssertTrue(src.href.hasPrefix("https://"), src.rawValue)
+            XCTAssertNotNil(URL(string: src.href), src.rawValue)
+            XCTAssertFalse(src.title.isEmpty)
+            XCTAssertFalse(src.body.isEmpty)
+            XCTAssertEqual(CiteSrc.href(id: src.rawValue), src.href)
+        }
+        XCTAssertNil(CiteSrc.href(id: "missing"))
+    }
+
+    func testRequiredHostsArePresent() {
+        let hrefs = CiteSrc.allCases.map(\.href)
+        XCTAssertTrue(hrefs.contains { $0.contains("openfoodfacts.org") })
+        XCTAssertTrue(hrefs.contains { $0.contains("dietaryguidelines.gov") })
+        XCTAssertTrue(hrefs.contains { $0.contains("fda.gov") })
+        XCTAssertTrue(hrefs.contains { $0.contains("ods.od.nih.gov") })
+    }
+
+    func testSeedTargetsSitInAMDR() {
+        let t = GoalTgt.seed
+        let protPct = t.prot * 4 / t.kcal
+        let carbPct = t.carb * 4 / t.kcal
+        let fatPct = t.fat * 9 / t.kcal
+        XCTAssertEqual(t.kcal, 2000, accuracy: 0.01)
+        XCTAssertTrue((0.10...0.35).contains(protPct))
+        XCTAssertTrue((0.45...0.65).contains(carbPct))
+        XCTAssertTrue((0.20...0.35).contains(fatPct))
     }
 }
 

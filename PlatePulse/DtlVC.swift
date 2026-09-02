@@ -28,6 +28,7 @@ final class DtlVC: UIViewController, DtlView, UITextFieldDelegate, UIScrollViewD
     @IBOutlet private weak var emptyTitle: UILabel!
     @IBOutlet private weak var missLbl: UILabel!
     @IBOutlet private weak var formBox: UIView!
+    @IBOutlet private weak var citeBtn: UIButton!
 
     init() { super.init(nibName: "DtlVC", bundle: nil) }
     required init?(coder: NSCoder) { super.init(coder: coder) }
@@ -43,7 +44,10 @@ final class DtlVC: UIViewController, DtlView, UITextFieldDelegate, UIScrollViewD
         gramField.accessibilityLabel = "Portion in grams"
         asgnBtn.addTarget(self, action: #selector(asgn), for: .touchUpInside)
         wishBtn.addTarget(self, action: #selector(wish), for: .touchUpInside)
+        citeBtn.addTarget(self, action: #selector(cite), for: .touchUpInside)
         asgnBtn.accessibilityLabel = "Assign this reading"
+        citeBtn.accessibilityLabel = "Sources and citations"
+        citeBtn.accessibilityHint = "Opens Open Food Facts and the other cited sources"
         kbd = PulseKbd.watch(scroll, owner: self)
         scroll.delegate = self
         _ = PulseKbd.dismissTap(view)
@@ -88,8 +92,11 @@ final class DtlVC: UIViewController, DtlView, UITextFieldDelegate, UIScrollViewD
         wishBtn.setTitle(vm.wishTitle, for: .normal)
         wishBtn.isEnabled = vm.wishOn
         wishBtn.accessibilityLabel = vm.wishTitle
+        citeBtn.setTitle(vm.cite, for: .normal)
+        citeBtn.accessibilityLabel = vm.cite
         paintBtn(asgnBtn, vm.hi)
         paintBtn(wishBtn, vm.hi)
+        paintBtn(citeBtn, vm.hi)
         emptyBox.backgroundColor = PulseHue.surface(vm.hi)
         Task { [weak self] in
             let img = await (self?.imgs ?? ImgLoad()).thumb(url: vm.imgURL, shelf: vm.shelfImg)
@@ -106,6 +113,7 @@ final class DtlVC: UIViewController, DtlView, UITextFieldDelegate, UIScrollViewD
     @objc private func grams() { prsntr.grams(gramField.text ?? "") }
     @objc private func asgn() { prsntr.assign() }
     @objc private func wish() { prsntr.wish() }
+    @objc private func cite() { prsntr.tapCite() }
     @objc private func doneKbd() { view.endEditing(true) }
 
     private func paintBtn(_ btn: UIButton, _ hi: Bool) {

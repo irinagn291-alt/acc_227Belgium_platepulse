@@ -20,6 +20,7 @@ struct DtlVM: Sendable {
     var imgURL: String?
     var shelfImg: String?
     var missingEnergy: Bool
+    var cite: String
     var hi: Bool
 }
 
@@ -56,6 +57,10 @@ final class DtlPrsntr {
         coord?.root.go(FlowPage.asgn.rawValue)
     }
 
+    func tapCite() {
+        coord?.openCite()
+    }
+
     func wish() {
         guard let item = coord?.item else { return }
         Task { [weak self] in
@@ -74,7 +79,8 @@ final class DtlPrsntr {
                 name: "", brand: "", kcal100: "", prot100: "", carb100: "", fat100: "",
                 grams: "", totKcal: "", totProt: "", totCarb: "", totFat: "",
                 wishTitle: "", wishOn: false, canAssign: false,
-                imgURL: nil, shelfImg: nil, missingEnergy: false, hi: hi
+                imgURL: nil, shelfImg: nil, missingEnergy: false,
+                cite: "Nutrition from Open Food Facts", hi: hi
             ))
             return
         }
@@ -100,6 +106,7 @@ final class DtlPrsntr {
             imgURL: item.imgURL,
             shelfImg: item.shelfImg,
             missingEnergy: item.kcal100 == nil,
+            cite: "Nutrition from Open Food Facts — open sources",
             hi: hi
         ))
     }

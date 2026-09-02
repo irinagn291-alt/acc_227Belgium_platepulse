@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="cell" customClass="CiteCell" customModule="PlatePulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cell" id="con">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="tl"/>
+                    <label opaque="NO" text="Body" translatesAutoresizingMaskIntoConstraints="NO" id="bl"/>
+                    <label opaque="NO" text="https://example.org" translatesAutoresizingMaskIntoConstraints="NO" id="hl"/>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tl" firstAttribute="top" secondItem="con" secondAttribute="top" constant="12" id="x1"/>
+                    <constraint firstItem="tl" firstAttribute="leading" secondItem="con" secondAttribute="leading" constant="16" id="x2"/>
+                    <constraint firstItem="con" firstAttribute="trailing" secondItem="tl" secondAttribute="trailing" constant="16" id="x3"/>
+                    <constraint firstItem="bl" firstAttribute="top" secondItem="tl" secondAttribute="bottom" constant="4" id="x4"/>
+                    <constraint firstItem="bl" firstAttribute="leading" secondItem="tl" secondAttribute="leading" id="x5"/>
+                    <constraint firstItem="bl" firstAttribute="trailing" secondItem="tl" secondAttribute="trailing" id="x6"/>
+                    <constraint firstItem="hl" firstAttribute="top" secondItem="bl" secondAttribute="bottom" constant="8" id="x7"/>
+                    <constraint firstItem="hl" firstAttribute="leading" secondItem="tl" secondAttribute="leading" id="x8"/>
+                    <constraint firstItem="hl" firstAttribute="trailing" secondItem="tl" secondAttribute="trailing" id="x9"/>
+                    <constraint firstItem="con" firstAttribute="bottom" secondItem="hl" secondAttribute="bottom" constant="12" id="x10"/>
+                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="x11"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLbl" destination="tl" id="ot"/>
+                <outlet property="bodyLbl" destination="bl" id="ob"/>
+                <outlet property="hrefLbl" destination="hl" id="oh"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

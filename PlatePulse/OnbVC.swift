@@ -18,6 +18,7 @@ final class OnbVC: UIViewController, OnbView, UITextFieldDelegate, UIScrollViewD
     @IBOutlet private weak var protField: UITextField!
     @IBOutlet private weak var carbField: UITextField!
     @IBOutlet private weak var fatField: UITextField!
+    @IBOutlet private weak var citeBtn: UIButton!
 
     init() { super.init(nibName: "OnbVC", bundle: nil) }
     required init?(coder: NSCoder) { super.init(coder: coder) }
@@ -31,6 +32,9 @@ final class OnbVC: UIViewController, OnbView, UITextFieldDelegate, UIScrollViewD
         skipBtn.addTarget(self, action: #selector(skipTap), for: .touchUpInside)
         skipBtn.accessibilityLabel = "Skip and use default targets"
         nextBtn.accessibilityLabel = "Continue onboarding"
+        citeBtn.addTarget(self, action: #selector(citeTap), for: .touchUpInside)
+        citeBtn.accessibilityLabel = "Sources and citations"
+        citeBtn.accessibilityHint = "Opens links to USDA, FDA, Open Food Facts and Dietary Reference Intakes"
         artImg.isAccessibilityElement = false
         [kcalField, protField, carbField, fatField].forEach { f in
             f?.delegate = self
@@ -73,6 +77,8 @@ final class OnbVC: UIViewController, OnbView, UITextFieldDelegate, UIScrollViewD
             $0?.adjustsFontForContentSizeCategory = true
         }
         paintBtn(nextBtn, vm.hi)
+        paintBtn(citeBtn, vm.hi)
+        citeBtn.setTitle("Sources", for: .normal)
         skipBtn.titleLabel?.font = PulseType.font(.label)
         skipBtn.setTitleColor(PulseHue.muted(vm.hi), for: .normal)
     }
@@ -85,6 +91,7 @@ final class OnbVC: UIViewController, OnbView, UITextFieldDelegate, UIScrollViewD
 
     @objc private func nextTap() { prsntr.next() }
     @objc private func skipTap() { prsntr.skip() }
+    @objc private func citeTap() { prsntr.tapCite() }
     @objc private func doneKbd() { view.endEditing(true) }
     @objc private func changed() {
         prsntr.edit(kcal: kcalField.text, prot: protField.text, carb: carbField.text, fat: fatField.text)

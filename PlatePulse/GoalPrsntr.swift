@@ -2,6 +2,7 @@ import Foundation
 
 struct GoalVM: Sendable {
     var title: String
+    var cite: String
     var kcal: String
     var prot: String
     var carb: String
@@ -63,6 +64,10 @@ final class GoalPrsntr {
         }
     }
 
+    func tapCite() {
+        coord?.openCite()
+    }
+
     func rerunOnb() {
         coord?.rerunOnb()
     }
@@ -80,6 +85,7 @@ final class GoalPrsntr {
         let hi = await store.prefs().hiContrast
         view?.render(GoalVM(
             title: "Daily Goals",
+            cite: "Starting 2,000 kcal and macro grams follow USDA Dietary Guidelines, FDA Daily Values and National Academies DRIs. Pack figures come from Open Food Facts. Not medical advice.",
             kcal: PulseFmt.kcal(draft.kcal),
             prot: PulseFmt.macro(draft.prot),
             carb: PulseFmt.macro(draft.carb),

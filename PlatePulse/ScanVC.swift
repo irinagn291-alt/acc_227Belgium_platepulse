@@ -30,11 +30,15 @@ final class ScanVC: UIViewController, ScanView, UITextFieldDelegate {
         goBtn.addTarget(self, action: #selector(typed), for: .touchUpInside)
         permBtn.addTarget(self, action: #selector(perm), for: .touchUpInside)
         manField.delegate = self
-        manField.keyboardType = .numberPad
-        manField.placeholder = "Type a barcode"
-        manField.accessibilityLabel = "Manual barcode"
-        manField.accessibilityHint = "Use this when the camera is unavailable"
+        manField.placeholder = "Barcode or QR link"
+        manField.accessibilityLabel = "Manual barcode or QR link"
+        manField.accessibilityHint = "Type a barcode or paste a QR product URL when the camera is unavailable"
         PulseKbd.dock(manField, target: self, done: #selector(doneKbd))
+        manField.keyboardType = .URL
+        manField.textContentType = .URL
+        manField.autocapitalizationType = .none
+        manField.autocorrectionType = .no
+        manField.spellCheckingType = .no
         trigBtn.accessibilityLabel = "Lock this reading"
         trigBtn.accessibilityHint = "Accepts the last spoken barcode and opens detail"
         trigBtn.accessibilityTraits = .button
@@ -50,11 +54,8 @@ final class ScanVC: UIViewController, ScanView, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prsntr.appear()
-        eng.prep()
         eng.attach(to: previewBox)
-        if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-            eng.start()
-        }
+        eng.start()
     }
 
     override func viewDidLayoutSubviews() {
@@ -66,6 +67,8 @@ final class ScanVC: UIViewController, ScanView, UITextFieldDelegate {
         super.viewWillDisappear(animated)
         eng.stop()
     }
+
+    func armLive() { eng.start() }
 
     func render(_ vm: ScanVM) {
         view.backgroundColor = PulseHue.bg(vm.hi)
@@ -110,16 +113,13 @@ final class ScanVC: UIViewController, ScanView, UITextFieldDelegate {
         permBox.layer.borderColor = PulseHue.stroke(vm.hi).cgColor
         chips = vm.chips
         fillChips(vm.hi)
-        if vm.hasCam { eng.start() } else { eng.stop() }
     }
 
     @objc private func lock() { prsntr.lock() }
     @objc private func typed() { prsntr.typed(manField.text ?? "") }
     @objc private func doneKbd() { view.endEditing(true) }
     @objc private func bg() { eng.stop() }
-    @objc private func fg() {
-        if AVCaptureDevice.authorizationStatus(for: .video) == .authorized { eng.start() }
-    }
+    @objc private func fg() { eng.start() }
 
     @objc private func perm() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
