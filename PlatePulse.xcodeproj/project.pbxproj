@@ -19,12 +19,14 @@
 		24EA099CCA4ABD4CEC0F1A27 /* PulseKbd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D31D48781BED3DE0D17863B /* PulseKbd.swift */; };
 		2CCE5810B3E423C2B33FD682 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C4641955C711CAC096687A1 /* LogCell.xib */; };
 		2D13CA6F0825A781F450067B /* ContactWebSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69C14DCB7B761509724A4E /* ContactWebSheet.swift */; };
+		2EB001A6806DD53872773A11 /* CiteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE52397AEF97B3A164FA608 /* CiteVC.swift */; };
 		2FA06C7AAF9F54BD3E36A55C /* SlotKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FCDD8A6885DE54065EB197 /* SlotKind.swift */; };
 		2FD5E18DDDF1D912D65994F8 /* WishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557BC040669EC5CCACF231E /* WishCell.swift */; };
 		3690BCFE7F364A51833CB687 /* AsgnPrsntr.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4276E5E01165FC283DA1F98 /* AsgnPrsntr.swift */; };
 		390A258C2DAAEC07FFEEB774 /* PulseMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF1EDB454EE3E0945D08FF /* PulseMgr.swift */; };
 		3B3B449B72E8E9B66C7063BF /* ScanPrsntr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0852CFE91909C0DFCD82B /* ScanPrsntr.swift */; };
 		3B859544238A985020065902 /* AsgnVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DADED64ED5AE203773B732DA /* AsgnVC.xib */; };
+		42CAE8488EBD1ABB5DCA6350 /* CiteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D363D9197BFF167A4D92C04 /* CiteCell.xib */; };
 		4496E7A7389444FD34445DCC /* DtlVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA21136258F3A52FC58D6B6 /* DtlVC.xib */; };
 		453BF558FF82A5169DE4BD11 /* DayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3918D4723CCE4E861A28E0D /* DayVC.swift */; };
 		468983C29D72D940865E0D2A /* PulseAnim.swift in Sources */ = {isa = PBXBuildFile; fileRef = A192F2A61765CABDCC88055A /* PulseAnim.swift */; };
@@ -50,6 +52,7 @@
 		83FA1B0680BD90BDECEFC450 /* SrchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45304E3A53EA916BAC4FE22D /* SrchVC.swift */; };
 		862607558F5300AFA9D5E06E /* OnbVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D41364C4D2BF8805CA900C7 /* OnbVC.xib */; };
 		864853A70C2D89A921513A0E /* LogPrsntr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC02AA0C20F9D10D81C8877 /* LogPrsntr.swift */; };
+		88063F091C31FECF65298685 /* CiteSrc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415151233223AECD26A658A /* CiteSrc.swift */; };
 		8F88591943ADCF6B08F12110 /* GoalTgt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F9686DF95A9168D6FEB7E /* GoalTgt.swift */; };
 		90267A0BB829D189BD634E79 /* OnbCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90F8247AC12E61F003FDEA /* OnbCoord.swift */; };
 		91A1C022BAAF45D7AE470230 /* CoordBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C9AC0707F334245186F6D8 /* CoordBase.swift */; };
@@ -61,9 +64,11 @@
 		9CFDDA3537C0A85733A3DCCF /* A11yVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4AEE88BE31145E4F5978C /* A11yVC.swift */; };
 		9E3FF25580FFCC58303FB9A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9D64756449F1281148C874 /* SceneDelegate.swift */; };
 		A10EA35D8602A097A7886AA6 /* A11yVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D052A1E2B1DA7193915196B6 /* A11yVC.xib */; };
+		A4C19E208312454B50458A75 /* CitePrsntr.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD00DB9226CDF962E4D23C /* CitePrsntr.swift */; };
 		A8CEC10FFA02B5CEAA90626D /* PulseFmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663D37342BE53B75AB9229CA /* PulseFmt.swift */; };
 		A99293FF1FC38E9576BA86F6 /* WishCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9C4DAA0C9476B711717E7F /* WishCell.xib */; };
 		AD7EE1865B525A387B2802D2 /* PageHostVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66C7F86FFA1D713518E6D9E /* PageHostVC.xib */; };
+		AEDD0C362A2A9D21A376271C /* CiteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26148D9B686B053028905128 /* CiteVC.xib */; };
 		AF02AE8CEB22BCF2A2978AF2 /* GoalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8139605745CDD75CF4E65B4E /* GoalVC.xib */; };
 		B092F260FA778D837AFD3176 /* DayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D873C64872A230B972361022 /* DayVC.xib */; };
 		B1DC2706C12FD27CB53DF118 /* PlanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CAA11C2514A1C86C48D15E /* PlanVC.xib */; };
@@ -74,7 +79,9 @@
 		BE9B275E352F343408A32D7A /* LogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25D720A70387D641936999F /* LogVC.xib */; };
 		C7B0B3DCB7FB72314B899049 /* OnbPrsntr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E2FF64E2B810EE6388FD6E /* OnbPrsntr.swift */; };
 		C928A43363547BCA5BB0EC2D /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E468FACB4D956474872110B /* LogVC.swift */; };
+		D59C28508221E643C0AE47B2 /* CiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66B28C6D6A76DDCD5BFEBE8 /* CiteCell.swift */; };
 		DB8BB3C8E9255D9FB39F99C6 /* SlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114089B59EEDF802917969CA /* SlotCell.swift */; };
+		DE86396B58784DA948EADBE8 /* CiteCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5F65D3C4559A634102521 /* CiteCoord.swift */; };
 		E02D1942A5C8C3DE65B6C918 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD72E2B0152C3EEA530D977 /* Then.swift */; };
 		E202924BC0A0ADBFEC60AA08 /* ImgLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DD36069737F73B2C1C594F /* ImgLoad.swift */; };
 		E3CB0ECE5508765110DEADC6 /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C19525982B668234B1086DE /* PlanVC.swift */; };
@@ -113,9 +120,12 @@
 		1D31D48781BED3DE0D17863B /* PulseKbd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseKbd.swift; sourceTree = "<group>"; };
 		1D33D86E3BF6E9C8686C40D4 /* A11yCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11yCoord.swift; sourceTree = "<group>"; };
 		22CDDC41D19FA4AD373CA578 /* SlotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlotCell.xib; sourceTree = "<group>"; };
+		26148D9B686B053028905128 /* CiteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CiteVC.xib; sourceTree = "<group>"; };
 		277567F7ACAF01DED3CA0CE0 /* PageHostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHostVC.swift; sourceTree = "<group>"; };
+		2AD5F65D3C4559A634102521 /* CiteCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiteCoord.swift; sourceTree = "<group>"; };
 		2BB0411C51692F4D73356E4A /* FlowCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoord.swift; sourceTree = "<group>"; };
 		31E6DFDD474FB4BAC44A22DC /* ScanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanVC.xib; sourceTree = "<group>"; };
+		3415151233223AECD26A658A /* CiteSrc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiteSrc.swift; sourceTree = "<group>"; };
 		361AA96C1A48803BEF752FFB /* WishCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCoord.swift; sourceTree = "<group>"; };
 		36BB1F34A84824009E42E97B /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		3C4641955C711CAC096687A1 /* LogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
@@ -128,6 +138,7 @@
 		4A9C4DAA0C9476B711717E7F /* WishCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishCell.xib; sourceTree = "<group>"; };
 		4C90F8247AC12E61F003FDEA /* OnbCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbCoord.swift; sourceTree = "<group>"; };
 		4CC02AA0C20F9D10D81C8877 /* LogPrsntr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPrsntr.swift; sourceTree = "<group>"; };
+		4D363D9197BFF167A4D92C04 /* CiteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CiteCell.xib; sourceTree = "<group>"; };
 		53AB8AC2F122C4DAC4A24D57 /* PortionMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionMath.swift; sourceTree = "<group>"; };
 		5B4B64F458A3A8644717ED72 /* ScanEng.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanEng.swift; sourceTree = "<group>"; };
 		5C19525982B668234B1086DE /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
@@ -159,6 +170,7 @@
 		A4276E5E01165FC283DA1F98 /* AsgnPrsntr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsgnPrsntr.swift; sourceTree = "<group>"; };
 		A85CBBE7FF6712229268F525 /* WishRec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishRec.swift; sourceTree = "<group>"; };
 		AA0AFB8AE8773D2E5299BFA9 /* SrchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SrchCell.swift; sourceTree = "<group>"; };
+		ADBD00DB9226CDF962E4D23C /* CitePrsntr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitePrsntr.swift; sourceTree = "<group>"; };
 		AF9D64756449F1281148C874 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B0E2FF64E2B810EE6388FD6E /* OnbPrsntr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbPrsntr.swift; sourceTree = "<group>"; };
 		B1D5A88B3D25D5FEDA91F18F /* PulseHapt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseHapt.swift; sourceTree = "<group>"; };
@@ -168,7 +180,9 @@
 		C25D720A70387D641936999F /* LogVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogVC.xib; sourceTree = "<group>"; };
 		C3367168948B3546A7B295E9 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		C3D1F6B4CC88DA9F3124D601 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		C66B28C6D6A76DDCD5BFEBE8 /* CiteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiteCell.swift; sourceTree = "<group>"; };
 		C6FCDD8A6885DE54065EB197 /* SlotKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotKind.swift; sourceTree = "<group>"; };
+		CEE52397AEF97B3A164FA608 /* CiteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiteVC.swift; sourceTree = "<group>"; };
 		D052A1E2B1DA7193915196B6 /* A11yVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = A11yVC.xib; sourceTree = "<group>"; };
 		D1E33D1D60FDCF3316A18154 /* FlowHostVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlowHostVC.xib; sourceTree = "<group>"; };
 		D7926C7F21112ABDB081C8EB /* SrchPrsntr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SrchPrsntr.swift; sourceTree = "<group>"; };
@@ -243,6 +257,13 @@
 				E4059E3513C5BD0316063738 /* AsgnVC.swift */,
 				DADED64ED5AE203773B732DA /* AsgnVC.xib */,
 				8319637AC99892A4A5BDB588 /* Assets.xcassets */,
+				C66B28C6D6A76DDCD5BFEBE8 /* CiteCell.swift */,
+				4D363D9197BFF167A4D92C04 /* CiteCell.xib */,
+				2AD5F65D3C4559A634102521 /* CiteCoord.swift */,
+				ADBD00DB9226CDF962E4D23C /* CitePrsntr.swift */,
+				3415151233223AECD26A658A /* CiteSrc.swift */,
+				CEE52397AEF97B3A164FA608 /* CiteVC.swift */,
+				26148D9B686B053028905128 /* CiteVC.xib */,
 				3DB92E634C0638567B8522A5 /* CodeNorm.swift */,
 				8E69C14DCB7B761509724A4E /* ContactWebSheet.swift */,
 				72C9AC0707F334245186F6D8 /* CoordBase.swift */,
@@ -411,6 +432,8 @@
 				A10EA35D8602A097A7886AA6 /* A11yVC.xib in Resources */,
 				3B859544238A985020065902 /* AsgnVC.xib in Resources */,
 				47481097D1ED50C29F50A275 /* Assets.xcassets in Resources */,
+				42CAE8488EBD1ABB5DCA6350 /* CiteCell.xib in Resources */,
+				AEDD0C362A2A9D21A376271C /* CiteVC.xib in Resources */,
 				B092F260FA778D837AFD3176 /* DayVC.xib in Resources */,
 				4496E7A7389444FD34445DCC /* DtlVC.xib in Resources */,
 				4F4DCF45ED76490130C3D436 /* FlowHostVC.xib in Resources */,
@@ -446,6 +469,11 @@
 				8310B4BF18F16DFB5552FDBD /* AppDelegate.swift in Sources */,
 				3690BCFE7F364A51833CB687 /* AsgnPrsntr.swift in Sources */,
 				EE0F83E7C41C3342CEA6CC8A /* AsgnVC.swift in Sources */,
+				D59C28508221E643C0AE47B2 /* CiteCell.swift in Sources */,
+				DE86396B58784DA948EADBE8 /* CiteCoord.swift in Sources */,
+				A4C19E208312454B50458A75 /* CitePrsntr.swift in Sources */,
+				88063F091C31FECF65298685 /* CiteSrc.swift in Sources */,
+				2EB001A6806DD53872773A11 /* CiteVC.swift in Sources */,
 				7A9F41263966FE7000159D6A /* CodeNorm.swift in Sources */,
 				2D13CA6F0825A781F450067B /* ContactWebSheet.swift in Sources */,
 				91A1C022BAAF45D7AE470230 /* CoordBase.swift in Sources */,
