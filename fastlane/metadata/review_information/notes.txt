@@ -1,4 +1,8 @@
+Guideline 5.1.1(iv): The Scan pre-permission screen no longer uses an Allow camera button. That control is now labeled Continue. The in-app text only explains that a barcode can be read by camera, typed, or chosen from a sample chip. The system Allow / Don't Allow dialog is the only place the user grants or refuses camera access. Declining still leaves typing and sample chips available.
+
 Camera permission is requested when the user opens Scan inside the logging flow. The usage description string is: "PlatePulse reads barcodes so logging never depends on typing." The camera is used only for live barcode reading via AVCaptureMetadataOutput; manual barcode entry and sample shelf chips work without camera access.
+
+Attachment: PlatePulse_AppReview_ScanCard.png (and optional PlatePulse_AppReview_QR.png). Open the card on a second screen or print it. In the app: Today Pulse → Scan → Continue on the in-app screen, then Allow or Don't Allow in the system prompt → point the camera at the QR → Lock reading. The QR encodes https://id.gs1.org/01?gtin=0074354611200 and resolves to the bundled Hummus Pack even without a network. If the camera cannot be used, tap a sample chip on Scan or type 0074354611200 and Look up.
 
 There is no login or sign-in, no in-app purchase, no account system and therefore no account deletion flow. Personal food readings are stored locally on the device and are not shared with other users. There is no App Tracking Transparency prompt; NSPrivacyTracking is false in PrivacyInfo.xcprivacy.
 
