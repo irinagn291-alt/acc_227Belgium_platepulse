@@ -46,10 +46,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             finishLaunch(mode: .webContent, url: saved)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-            self?.finishLaunch(mode: .nativeInterface, url: nil)
+            Task { @MainActor in
+                self?.finishLaunch(mode: .nativeInterface, url: nil)
+            }
         }
         Alamofire.NetworkService.shared.performRegistration(pushToken: pushToken) { [weak self] mode, url in
-            DispatchQueue.main.async { self?.finishLaunch(mode: mode, url: url) }
+            Task { @MainActor in
+                self?.finishLaunch(mode: mode, url: url)
+            }
         }
     }
 

@@ -144,8 +144,8 @@ final class ScanPrsntr {
             title = ""
             body = ""
         case .ask:
-            title = "Camera is ready to listen"
-            body = "Allow the camera so a barcode can become a reading."
+            title = "Scan a shelf code"
+            body = "The camera can read a barcode. You can also type a code or tap a sample chip."
         case .denied:
             title = "Camera is off"
             body = "Open Settings to let PlatePulse read barcodes."

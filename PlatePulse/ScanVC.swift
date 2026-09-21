@@ -96,8 +96,8 @@ final class ScanVC: UIViewController, ScanView, UITextFieldDelegate {
         permLbl.text = [vm.permTitle, vm.permBody].filter { !$0.isEmpty }.joined(separator: "\n")
         switch vm.perm {
         case .ask:
-            permBtn.setTitle("Allow camera", for: .normal)
-            permBtn.accessibilityLabel = "Allow camera"
+            permBtn.setTitle("Continue", for: .normal)
+            permBtn.accessibilityLabel = "Continue"
         case .denied, .lock:
             permBtn.setTitle("Open Settings", for: .normal)
             permBtn.accessibilityLabel = "Open Settings"
